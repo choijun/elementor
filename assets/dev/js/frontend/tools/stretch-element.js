@@ -47,10 +47,15 @@ module.exports = elementorModules.ViewModule.extend( {
 		}
 
 		if ( ! isFixed ) {
+			
+			if($element.outerWidth() >= containerWidth){
+				correctOffset = 0;	
+			}
+			
 			if ( elementorFrontend.config.is_rtl ) {
 				correctOffset = containerWidth - ( $element.outerWidth() + correctOffset );
 			}
-
+			
 			correctOffset = -correctOffset;
 		}
 
